@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: bluemix-line-bot
+  host: bluemix-line-bot
+  disk_quota: 1024M
+  buildpack: go_buildpack
