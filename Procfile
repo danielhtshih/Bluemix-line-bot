@@ -1,1 +1,1 @@
-web: github.com/danielhtshih/bluemix-line-bot
+web: bluemix-line-bot
