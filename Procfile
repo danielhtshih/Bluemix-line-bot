@@ -1,1 +1,1 @@
-web: gohelloworld
+web: github.com/danielhtshih/bluemix-line-bot
