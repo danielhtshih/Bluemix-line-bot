@@ -1,5 +1,20 @@
 {
-	"ImportPath": "gohelloworld",
-	"GoVersion": "go1.4.3",
-	"Deps": []
+	"ImportPath": "github.com/danielhtshih/bluemix-line-bot",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "github.com/line/line-bot-sdk-go/linebot",
+			"Comment": "1.0.0-48-gcda5202",
+			"Rev": "cda5202f030a1e284c005854d45ef84c0ef460da"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "ffe101cce3477a6c6d8f0754d103bb0a84ec1266"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context/ctxhttp",
+			"Rev": "ffe101cce3477a6c6d8f0754d103bb0a84ec1266"
+		}
+	]
 }
