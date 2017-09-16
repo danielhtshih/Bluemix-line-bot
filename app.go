@@ -50,7 +50,7 @@ func main() {
 						log.Print(err)
 					}
 				case *linebot.ImageMessage:
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://api.line.me/v2/bot/message/"+message.ID+"/content", "")).Do(); err != nil {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://api.line.me/v2/bot/message/"+message.ID+"/content", "https://api.line.me/v2/bot/message/"+message.ID+"/content")).Do(); err != nil {
 						log.Print(err)
 					}
 				}
