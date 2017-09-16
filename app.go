@@ -18,6 +18,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 
 	"github.com/line/line-bot-sdk-go/linebot"
 )
@@ -50,7 +51,14 @@ func main() {
 						log.Print(err)
 					}
 				case *linebot.ImageMessage:
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://api.line.me/v2/bot/message/"+message.ID+"/content", "https://api.line.me/v2/bot/message/"+message.ID+"/content")).Do(); err != nil {
+					content, err := bot.GetMessageContent(message.ID).Do()
+					if err != nil {
+						log.Print(err)
+						continue
+					}
+					defer content.Content.Close()
+
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Image size: "+strconv.FormatInt(content.ContentLength, 10)+" bytes")).Do(); err != nil {
 						log.Print(err)
 					}
 				}
