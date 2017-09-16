@@ -49,6 +49,10 @@ func main() {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do(); err != nil {
 						log.Print(err)
 					}
+				case *linebot.ImageMessage:
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage("https://api.line.me/v2/bot/message/"+message.ID+"/content", "")).Do(); err != nil {
+						log.Print(err)
+					}
 				}
 			}
 		}
